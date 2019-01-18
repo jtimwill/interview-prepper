@@ -5,7 +5,11 @@
 
 
 window.onload = function() {
-  var images = ['1.gif', '2.gif', '3.gif', '4.gif', '5.gif'];
+  var images = [
+    'http://i.imgur.com/1wbgdEe.gif',
+    'https://www.shemazing.net/wp-content/uploads/2015/06/wtf2_zpsdf922240.gif'
+  ];
+
   var hundreths = 0;
   var seconds = 0;
   var minutes = 0;
@@ -14,7 +18,7 @@ window.onload = function() {
   var play_button = document.getElementById("play");
   var next_button = document.getElementById("next");
 
-  var questions = [ 
+  var questions = [
     "Tell me about yourself",
     "Why do you want to work here?",
     "What are your strengths?"
@@ -139,5 +143,3 @@ window.onload = function() {
   }
 
 };
-
-
