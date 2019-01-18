@@ -1,0 +1,127 @@
+/* Button Style: https://launchschool.com */
+
+body, html, main, .wrapper {
+  margin: 0;
+  height: 100%;
+  font-family: 'Arial';
+}
+
+main {
+  background-color: black;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 0.5fr 2fr 0.5fr 2fr 1fr;
+  grid-template-rows: 0.5fr 8fr 0.5fr 2fr 0.5fr 3fr 0.5fr 0.5fr 1fr;
+  border: 2px solid #000000;
+  border-radius: 15px;
+  background-color: #B5B4B2;
+  margin: auto;
+  box-sizing: border-box;
+  width: 500px;
+}
+
+.wrapper > div {
+  border: 2px solid #000000;
+  border-radius: 5px;
+  /*background-color: #ffd8a8;*/
+  padding: 1em;
+  /*color: #d9480f;*/
+}
+
+.face {
+  grid-column: 2/7;
+  grid-row: 2/3;
+  background-color: #425018;
+  color: #1D2526;
+  font-size: 1.25em;
+}
+
+img { /* Can the img centering be done with justify-self?*/
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+
+.button-1 {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.button-2 {
+  grid-column: 4/5;
+  grid-row: 4/5;
+}
+
+.button-3 {
+  grid-column: 6/7;
+  grid-row: 4/5;
+}
+
+.button-1,
+.button-2,
+.button-3  {
+  position: relative;
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: #A02B60;
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  transition: box-shadow 200ms ease, top 200ms ease, left 200ms, ease, color 200ms ease;
+  box-shadow: 2px 2px 0 2px #421228;
+}
+.button-1:hover,
+.button-2:hover,
+.button-3:hover,
+.button-1:focus,
+.button-2:focus,
+.button-3:focus {
+  color: #ffff9d;
+}
+.button-1:active,
+.button-2:active,
+.button-3:active {
+  left: 2px;
+  top: 2px;
+  box-shadow: 1px 1px 0 1px #421228;
+}
+
+.timer { /* Is there a better way to center than flex? */
+  grid-column: 2/7;
+  grid-row: 6/7;
+  display: flex;
+  justify-content: center;
+  background-color: #0F27FD;
+  color: #E3FBFF;
+}
+
+.timer > span {
+  font-size: 4em;
+}
+
+.progress { /* Is there a better way to center */
+  grid-column: 2/7;
+  grid-row: 8/9;
+  display: flex;
+  justify-content: center;
+  background-color: #0F27FD;
+  color: #E3FBFF;
+}
+
+
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+}
