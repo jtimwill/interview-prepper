@@ -5,27 +5,27 @@
 
 
 window.onload = function() {
-  var images = [
+  let images = [
     'http://i.imgur.com/1wbgdEe.gif',
     'https://www.shemazing.net/wp-content/uploads/2015/06/wtf2_zpsdf922240.gif'
   ];
 
-  var hundreths = 0;
-  var seconds = 0;
-  var minutes = 0;
-  var state = 'reset';
-  var replay_button = document.getElementById("replay");
-  var play_button = document.getElementById("play");
-  var next_button = document.getElementById("next");
+  let hundreths = 0;
+  let seconds = 0;
+  let minutes = 0;
+  let state = 'reset';
+  let replay_button = document.getElementById("replay");
+  let play_button = document.getElementById("play");
+  let next_button = document.getElementById("next");
 
-  var questions = [
+  let questions = [
     "Tell me about yourself",
     "Why do you want to work here?",
     "What are your strengths?"
   ];
-  var total_questions = questions.length;
+  let total_questions = questions.length;
 
-  var answered = 0;
+  let answered = 0;
 
   function randomIndex(len) {
     return Math.floor(Math.random() * len);
@@ -37,8 +37,8 @@ window.onload = function() {
 
 
   // Duplicate
-  var random_index = randomIndex(questions.length);
-  var msg = new SpeechSynthesisUtterance(questions[random_index]);
+  let random_index = randomIndex(questions.length);
+  let msg = new SpeechSynthesisUtterance(questions[random_index]);
   answered = 0;
   questions = remove_question(questions, random_index);
   // Duplicate
@@ -57,9 +57,9 @@ window.onload = function() {
     // Duplicate
 
     reset_timer();
-    var element = document.getElementById('progress');
+    let element = document.getElementById('progress');
     element.innerHTML = "progress: " + ((answered/total_questions)*100).toPrecision(3) + "%";
-    var gif = document.getElementById('img');
+    let gif = document.getElementById('img');
     gif.src = "";
   }
 
@@ -101,13 +101,13 @@ window.onload = function() {
   }
 
   function output(){
-    var element = document.getElementById('timer');
-    var text = d_digit_string(minutes) + ":" + d_digit_string(seconds) + ":" + d_digit_string(hundreths);
+    let element = document.getElementById('timer');
+    let text = d_digit_string(minutes) + ":" + d_digit_string(seconds) + ":" + d_digit_string(hundreths);
     element.innerHTML = text;
   }
 
   function d_digit_string(number){
-    var string = number.toPrecision();
+    let string = number.toPrecision();
     if (string.length == 1) {
       string = "0" + string;
     }
@@ -123,8 +123,8 @@ window.onload = function() {
   }
 
   play_button.onclick = function () {
-    var gif = document.getElementById('img');
-    var element = document.getElementById('play');
+    let gif = document.getElementById('img');
+    let element = document.getElementById('play');
     if (state == 'playing') {
       state = 'stopped'
       element.innerHTML = "Reset";
@@ -141,5 +141,4 @@ window.onload = function() {
       delay();
     }
   }
-
 };
